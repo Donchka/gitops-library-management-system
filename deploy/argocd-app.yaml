@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: library-management-system
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Donchka/gitops-library-management-system.git
+    targetRevision: main
+    path: deploy/charts/library-management-system
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: library
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
