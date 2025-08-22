@@ -35,7 +35,7 @@ jobs:
       - name: Update Helm values.yaml
         run: |
           yq -i '.image.repository = "${{ secrets.DOCKERHUB_USERNAME }}/library-management-system"' deploy/charts/library-management-system/values.yaml
-          yq -i '.image.tag = "${{ github.sha }}"' deploy/charts/library-management-system/values.yaml
+          yq -i '.image.tag = "${{ github.sha }}"' deploy/chart/library-management-system/values.yaml
 
       - name: Commit updated values.yaml
         run: |
