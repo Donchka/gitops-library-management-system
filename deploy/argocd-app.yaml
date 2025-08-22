@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Donchka/gitops-library-management-system.git
     targetRevision: main
-    path: deploy/charts/library-management-system
+    path: deploy/chart/library-management-system
   destination:
     server: https://kubernetes.default.svc
     namespace: library

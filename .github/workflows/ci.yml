@@ -34,13 +34,13 @@ jobs:
 
       - name: Update Helm values.yaml
         run: |
-          yq -i '.image.repository = "${{ secrets.DOCKERHUB_USERNAME }}/library-management-system"' deploy/charts/library-management-system/values.yaml
+          yq -i '.image.repository = "${{ secrets.DOCKERHUB_USERNAME }}/library-management-system"' deploy/chart/library-management-system/values.yaml
           yq -i '.image.tag = "${{ github.sha }}"' deploy/chart/library-management-system/values.yaml
 
       - name: Commit updated values.yaml
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add deploy/charts/library-management-system/values.yaml
+          git add deploy/chart/library-management-system/values.yaml
           git commit -m "Update image tag to ${{ github.sha }}"
           git push
