@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: donchka/library-management-system
-  tag: f4b79c6cc7fd041d1707407b89809a4a62b3a982
+  tag: 425b407a135a9b64c0e5769f3e13bdcb406d7eb9
 service:
   type: ClusterIP
   port: 8000
